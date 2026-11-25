@@ -388,6 +388,12 @@ def apply_update(kind, version, url, force=False):
     with LOCK:
         n = players_online()
         if n and not force:
+            if (state().get("pending") or "").split(" waits")[0] != f"{kind} {version}":
+                try:  # tell the players once, so "Make it live" doesn't look broken
+                    what = "Your new horse designs are" if kind == "skins" else f"Harry's Equestrian {version} is"
+                    bds_command('tellraw @a {"rawtext":[{"text":"' + what + ' ready. They appear next time everyone has left and joined again."}]}')
+                except Exception:
+                    pass
             save_state(pending=f"{kind} {version} waits until nobody is playing ({n} online)")
             log(f"{kind} {version} is ready but {n} playing, will try again later")
             return False
@@ -442,15 +448,19 @@ def apply_update(kind, version, url, force=False):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
-def check_updates(force=False):
+def check_updates(force=False, skins_only=False):
     if not os.path.isdir(WORLD):
         return
     try:
+        if skins_only:
+            raise StopIteration
         v, url = latest_addon()
         have = installed_version(ADDON_BP)
         s = state()
         if (have is None or vtuple(v) > vtuple(have)) and (force or s.get("held_addon") != v):
             apply_update("addon", v, url, force=force)
+    except StopIteration:
+        pass
     except Exception as e:
         log(f"add-on check failed: {e}")
     if SKINS_URL:
@@ -882,6 +892,7 @@ def main():
     log(f"helper up, admin page on port {ADMIN_PORT}, world '{LEVEL}'")
     threading.Thread(target=selftest, daemon=True).start()
     next_check = time.time() + 120
+    next_skins = time.time() + 60
     while True:
         try:
             now = dt.datetime.now()
@@ -894,7 +905,11 @@ def main():
             learn_allow(time.time() - 90)
             if time.time() >= next_check:
                 next_check = time.time() + CHECK_MINUTES * 60
+                next_skins = time.time() + 60
                 check_updates()
+            elif SKINS_URL and time.time() >= next_skins:
+                next_skins = time.time() + 60  # Skin Studio's "Make it live" should land within a minute or two
+                check_updates(skins_only=True)
         except Exception:
             log("loop error: " + traceback.format_exc().splitlines()[-1])
         time.sleep(30)
