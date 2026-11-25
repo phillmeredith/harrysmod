@@ -44,7 +44,7 @@ services:
       # NetherNet gameplay runs over UDP on these ports. The public IP must be named, because on
       # cloud hosts (Oracle, AWS...) the machine only knows its private address and clients get "Door".
       TRANSPORT: nethernet
-      SERVER_UDP_PORTS: ${GAME_UDP_PORTS:-<public_ipv4>:19140-19155:19140-19155}
+      SERVER_UDP_PORTS: ${GAME_UDP_PORTS:-<public_ipv4>:19140:19140}  # one shared port: ranges broke joins (Spyglass) on 1.26.6x
       ONLINE_MODE: "true"
       ALLOW_LIST: "true"
       # who may join lives in data/allowlist.json, edited on the helper's admin page

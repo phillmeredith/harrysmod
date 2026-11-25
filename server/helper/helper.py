@@ -609,7 +609,8 @@ def set_allow(names):
     for n in names:
         n = n.strip()
         if n and n.lower() not in [o["name"].lower() for o in out]:
-            e = {"ignoresPlayerLimit": False, "name": n}
+            # the server matches names with exact capitals: keep the spelling it has seen
+            e = {"ignoresPlayerLimit": False, "name": old.get(n.lower(), {}).get("name") or n}
             if old.get(n.lower(), {}).get("xuid"):
                 e["xuid"] = old[n.lower()]["xuid"]
             out.append(e)
@@ -622,6 +623,33 @@ def set_allow(names):
             bds_command("allowlist reload")
         except Exception:
             pass
+
+
+CONNECT_RE = re.compile(r"Player connected: (.+?), xuid: (\d+)")
+
+
+def learn_allow(since):
+    """When someone on the list joins (e.g. while the list was off), store their exact name and xuid,
+    so capitals typed differently on the admin page no longer lock them out."""
+    try:
+        seen = {m.group(1).strip(): m.group(2) for m in CONNECT_RE.finditer(bds_logs(since=since))}
+        if not seen:
+            return
+        lst = json.load(open(ALLOW))
+        changed = False
+        for e in lst:
+            for name, xuid in seen.items():
+                if e.get("name", "").lower() == name.lower() and (e.get("name") != name or e.get("xuid") != xuid):
+                    e["name"], e["xuid"] = name, xuid
+                    changed = True
+        if changed:
+            tmp = ALLOW + ".tmp"
+            json.dump(lst, open(tmp, "w"), indent=1)
+            os.replace(tmp, ALLOW)
+            log("allowlist: learned exact names " + ", ".join(seen))
+            bds_command("allowlist reload")
+    except Exception:
+        pass
 
 
 # ---------------------------------------------------------------- admin page
@@ -730,7 +758,7 @@ class Admin(http.server.BaseHTTPRequestHandler):
 <form method=post action="/update?k={k}" style=display:inline><button>Check for an update now</button></form>
 <form method=post action="/backup-now?k={k}" style=display:inline><button>Back up now</button></form>
 <a class=btn href="/log.txt?k={k}">Server log</a></div>
-<div class=card><h2>Who can join</h2><p class=muted>Xbox gamertags, one per line, spelt exactly as in Minecraft.</p>
+<div class=card><h2>Who can join</h2><p class=muted>Xbox gamertags, one per line, spelt exactly as in Minecraft, capitals included (HariboHarry25, not hariboharry25).</p>
 <form method=post action="/allow?k={k}"><textarea name=names rows=4 style="width:100%;font-size:16px">{html.escape(chr(10).join(st["allowed"]))}</textarea><br><button>Save</button></form></div>
 <div class=card><h2>Backups</h2><p class=muted>Tap one to download it. An .mcworld opens in Minecraft on the iPad.</p><ul>{bl}</ul></div>
 <div class=card><h2>Put a world on the server</h2>
@@ -863,6 +891,7 @@ def main():
                 if n == 0 or (n is None and not bds_running()):
                     save_state(last_backup_day=now.strftime("%Y-%m-%d"))
                     backup("daily")
+            learn_allow(time.time() - 90)
             if time.time() >= next_check:
                 next_check = time.time() + CHECK_MINUTES * 60
                 check_updates()
