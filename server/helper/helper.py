@@ -716,9 +716,11 @@ class Admin(http.server.BaseHTTPRequestHandler):
         q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
         return urllib.parse.quote(q.get("k", [""])[0])
 
-    def send(self, code, body, ctype="text/html; charset=utf-8"):
+    def send(self, code, body, ctype="text/html; charset=utf-8", cors=False):
         b = body.encode() if isinstance(body, str) else body
         self.send_response(code)
+        if cors:
+            self.send_header("Access-Control-Allow-Origin", "https://skins.phillm.dev")
         self.send_header("Content-Type", ctype)
         self.send_header("Content-Length", str(len(b)))
         self.send_header("Cache-Control", "no-store")
@@ -727,8 +729,13 @@ class Admin(http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         if urllib.parse.urlparse(self.path).path == "/health":
-            st = state().get("selftest", "not run yet")
-            return self.send(200, json.dumps({"selftest": st, "server": bds_running()}), "application/json")
+            s = state()
+            pend = s.get("pending") or ""
+            return self.send(200, json.dumps({
+                "selftest": s.get("selftest", "not run yet"), "server": bds_running(),
+                "addon": installed_version(ADDON_BP), "skins": s.get("skins_version"),
+                "skins_waiting": pend.split(" ")[1] if pend.startswith("skins ") else None,
+            }), "application/json", cors=True)
         if not self.authed():
             return self.send(404, "not found", "text/plain")
         u = urllib.parse.urlparse(self.path)
