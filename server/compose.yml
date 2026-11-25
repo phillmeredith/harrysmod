@@ -1,0 +1,58 @@
+# Harry's Minecraft server: the Bedrock Dedicated Server plus a small helper.
+# Works on any Linux host with Docker (x86 or ARM; on ARM the image runs the server through box64).
+# Settings live in .env (copy .env.example). Data lives in ./data, backups in ./backups.
+name: harry
+services:
+  helper:
+    image: public.ecr.aws/docker/library/python:3.12-alpine
+    container_name: harry-helper
+    network_mode: host
+    restart: unless-stopped
+    command: ["python", "-u", "/app/helper.py"]
+    env_file: .env
+    environment:
+      BDS_CONTAINER: harry-bds
+    volumes:
+      - ./helper:/app:ro
+      - ./data:/data
+      - ./backups:/backups
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
+    healthcheck:
+      test: ["CMD", "test", "-f", "/data/.helper/ready"]
+      interval: 10s
+      retries: 360
+      start_period: 10s
+
+  bds:
+    image: itzg/minecraft-bedrock-server:latest
+    container_name: harry-bds
+    network_mode: host
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    depends_on:
+      helper:
+        condition: service_healthy
+    environment:
+      EULA: "TRUE"
+      VERSION: LATEST             # follows the iPad's Minecraft updates (checked on each restart)
+      SERVER_NAME: ${SERVER_NAME}
+      LEVEL_NAME: ${LEVEL_NAME}
+      SERVER_PORT: ${SERVER_PORT:-19132}
+      SERVER_PORT_V6: ${SERVER_PORT_V6:-19133}
+      ONLINE_MODE: "true"
+      ALLOW_LIST: "true"
+      # who may join lives in data/allowlist.json, edited on the helper's admin page
+      DEFAULT_PLAYER_PERMISSION_LEVEL: ${DEFAULT_PLAYER_PERMISSION_LEVEL:-operator}
+      TEXTUREPACK_REQUIRED: "true" # iPads download the add-on (and skins) from the server
+      MAX_PLAYERS: ${MAX_PLAYERS:-6}
+      VIEW_DISTANCE: ${VIEW_DISTANCE:-32}
+      TICK_DISTANCE: ${TICK_DISTANCE:-6}
+      ENABLE_LAN_VISIBILITY: "true"
+      CONTENT_LOG_CONSOLE_OUTPUT_ENABLED: "true"
+      # gamemode, difficulty and allow-cheats are NOT set here on purpose:
+      # the helper copies them from Harry's world when it is imported, and they then stay put.
+    volumes:
+      - ./data:/data
+      - /etc/localtime:/etc/localtime:ro
