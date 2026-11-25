@@ -1,5 +1,5 @@
 {
-  "latest": "4.3.1",
+  "latest": "4.3.2",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -7,6 +7,17 @@
     "4.3": "Horse Models"
   },
   "releases": [
+    {
+      "version": "4.3.2",
+      "date": "2026-11-25",
+      "file": "releases/HarrysEquestrian_v4.3.2.mcaddon",
+      "notes_for_harry": [
+        "The Realistic horse's cheeks are smooth now, with no tiny pixels",
+        "Its mane looks proper and doesn't poke through its face",
+        "Its neck doesn't flicker or clip any more, right down to the bottom"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.3.1",
       "date": "2026-11-25",
@@ -35,7 +46,7 @@
     {
       "version": "4.2.1",
       "date": "2026-11-20",
-      "file": "releases/HarrysEquestrian_v4.2.1.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.2.1.mcaddon",
       "notes_for_harry": [
         "Saddle racks and all the other racks are fixed! Your tack sits on the rack now instead of poking through it",
         "Blankets fold over the rails, leads hang from their hooks and armour drapes over the top of its stand"
