@@ -1,11 +1,27 @@
 {
-  "latest": "4.2.1",
+  "latest": "4.3.0",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
-    "4.2": "Harry's Shapes"
+    "4.2": "Harry's Shapes",
+    "4.3": "Horse Models"
   },
   "releases": [
+    {
+      "version": "4.3.0",
+      "date": "2026-11-25",
+      "file": "releases/HarrysEquestrian_v4.3.0.mcaddon",
+      "notes_for_harry": [
+        "New: pick what kind of horse you want! Classic, or the new Realistic horse made by MoonLightLissa",
+        "When you design a horse, the Designer asks which kind of horse it should be",
+        "Change any of your horses: open its horse menu and tap Horse model",
+        "Realistic horses have mane styles (thick, plaits or hogged) and tail styles (thick, long or short)",
+        "Your horse keeps its coat, tack, name and friends when it changes model",
+        "New coat: Moonlight Dapple",
+        "The Horse Guide has a Horse models page"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.2.1",
       "date": "2026-11-20",
@@ -31,7 +47,7 @@
     {
       "version": "4.1.0",
       "date": "2026-11-19",
-      "file": "releases/HarrysEquestrian_v4.1.0.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.1.0.mcaddon",
       "notes_for_harry": [
         "Your own designs! 24 coats, 12 hobby horses and 8 of every kind of tack, ready for you to paint in Skin Studio",
         "Open the Horse Guide and tap Harry's designs to give your horse one of your coats, or get your hobby horses and tack",
