@@ -1,5 +1,5 @@
 {
-  "latest": "4.4.0",
+  "latest": "4.4.1",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -8,6 +8,17 @@
     "4.4": "Lisssa's Horses"
   },
   "releases": [
+    {
+      "version": "4.4.1",
+      "date": "2026-11-25",
+      "file": "releases/HarrysEquestrian_v4.4.1.mcaddon",
+      "notes_for_harry": [
+        "Helmets, chestplates and leggings show on you now when you wear them, in every kind of metal",
+        "Riding boots go on the right feet and stay on your legs when you walk and ride",
+        "The riding helmet and cowboy hat sit on your head"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.4.0",
       "date": "2026-11-25",
@@ -35,7 +46,7 @@
     {
       "version": "4.3.1",
       "date": "2026-11-25",
-      "file": "releases/HarrysEquestrian_v4.3.1.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.3.1.mcaddon",
       "notes_for_harry": [
         "Your horses know you on the new server! No more \"You don't have access to this horse\"",
         "Laura's horses know her too, and leaves make shavings on the crafting table now"
