@@ -36,7 +36,7 @@ services:
         condition: service_healthy
     environment:
       EULA: "TRUE"
-      VERSION: LATEST             # follows the iPad's Minecraft updates (checked on each restart)
+      VERSION: ${MC_VERSION:-LATEST}   # LATEST follows Minecraft updates; pin (e.g. 1.26.62.1) when the iPad lags the server
       SERVER_NAME: ${SERVER_NAME}
       LEVEL_NAME: ${LEVEL_NAME}
       SERVER_PORT: ${SERVER_PORT:-19132}
