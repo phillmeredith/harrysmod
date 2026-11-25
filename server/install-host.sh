@@ -56,12 +56,12 @@ envget() { grep -E "^$1=" "$ENVF" | tail -1 | cut -d= -f2-; }
 SERVER_PORT=$(envget SERVER_PORT); SERVER_PORT_V6=$(envget SERVER_PORT_V6)
 ADMIN_PORT=$(envget ADMIN_PORT); ADMIN_TOKEN=$(envget ADMIN_TOKEN)
 
-say "firewall: game TCP+UDP ${SERVER_PORT:-19132} (NetherNet), UDP ${SERVER_PORT_V6:-19133}, admin TCP ${ADMIN_PORT:-8080}"
+say "firewall: game TCP+UDP ${SERVER_PORT:-19132}, gameplay UDP 19140-19155 (NetherNet), UDP ${SERVER_PORT_V6:-19133}, admin TCP ${ADMIN_PORT:-8080}"
 open_port() { # proto port
   iptables -C INPUT -p "$1" --dport "$2" -j ACCEPT 2>/dev/null || iptables -I INPUT 1 -p "$1" --dport "$2" -j ACCEPT \
     || echo "(could not open $1 $2 in iptables; open it by hand if the host has a firewall)"
 }
-open_port udp "${SERVER_PORT:-19132}"; open_port tcp "${SERVER_PORT:-19132}"; open_port udp "${SERVER_PORT_V6:-19133}"; open_port tcp "${ADMIN_PORT:-8080}"
+open_port udp "${SERVER_PORT:-19132}"; open_port tcp "${SERVER_PORT:-19132}"; open_port udp "${SERVER_PORT_V6:-19133}"; open_port tcp "${ADMIN_PORT:-8080}"; open_port udp 19140:19155
 if command -v ip6tables >/dev/null; then
   ip6tables -C INPUT -p udp --dport "${SERVER_PORT_V6:-19133}" -j ACCEPT 2>/dev/null || ip6tables -I INPUT 1 -p udp --dport "${SERVER_PORT_V6:-19133}" -j ACCEPT || true
 fi

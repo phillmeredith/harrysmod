@@ -24,7 +24,7 @@ curl -fsSL https://raw.githubusercontent.com/phillmeredith/harrysmod/main/server
 sudo ALLOW_LIST_USERS="Gamertag1,Gamertag2" bash install-host.sh
 ```
 
-It installs Docker, opens the firewall (TCP+UDP 19132, UDP 19133, TCP 8080), writes `/opt/harry-server/.env`
+It installs Docker, opens the firewall (TCP+UDP 19132, UDP 19133, UDP 19140-19155, TCP 8080), writes `/opt/harry-server/.env`
 with a random admin key, starts everything and prints the admin page link. Running it again updates the kit files and
 keeps `.env`, the world and the backups. On a cloud host, also allow those ports in the provider's firewall
 (Oracle: the subnet's security list).
@@ -40,4 +40,7 @@ From a computer with SSH access to the host: `./deploy-ssh.sh user@host` does th
 
 ## Ports
 
-Bedrock 1.26 uses NetherNet by default: the server port (19132) is used on **both TCP and UDP**.
+Bedrock 1.26 uses NetherNet by default: clients first talk to **TCP 19132** (signaling), then play over **UDP 19140-19155**
+(`GAME_UDP_PORTS`, one port per player). The server tells clients its public IP for those UDP ports, so behind a
+cloud NAT (Oracle, AWS) this must be the public address, which `<public_ipv4>` fills in. Open TCP 19132,
+UDP 19132-19133 and UDP 19140-19155 in the provider firewall. Without the UDP range clients get the "Door" error.
