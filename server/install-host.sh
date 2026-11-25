@@ -40,8 +40,14 @@ ENVF="$INSTALL_DIR/.env"
 if [ ! -f "$ENVF" ]; then
   say "writing .env"
   cp "$INSTALL_DIR/.env.example" "$ENVF"
-  TOKEN=${ADMIN_TOKEN:-$(head -c 24 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c 32)}
-  sed -i "s|^ADMIN_TOKEN=.*|ADMIN_TOKEN=$TOKEN|" "$ENVF"
+  if [ -n "${ADMIN_TOKEN_SHA256:-}" ] && [ -z "${ADMIN_TOKEN:-}" ]; then
+    # only the key's fingerprint is given: the key itself never touches this machine
+    sed -i "s|^ADMIN_TOKEN=.*|ADMIN_TOKEN=|" "$ENVF"
+    echo "ADMIN_TOKEN_SHA256=$ADMIN_TOKEN_SHA256" >> "$ENVF"
+  else
+    TOKEN=${ADMIN_TOKEN:-$(head -c 24 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c 32)}
+    sed -i "s|^ADMIN_TOKEN=.*|ADMIN_TOKEN=$TOKEN|" "$ENVF"
+  fi
   [ -n "${ALLOW_LIST_USERS:-}" ] && sed -i "s|^ALLOW_LIST_USERS=.*|ALLOW_LIST_USERS=$ALLOW_LIST_USERS|" "$ENVF"
   [ -n "${SERVER_NAME:-}" ] && sed -i "s|^SERVER_NAME=.*|SERVER_NAME=$SERVER_NAME|" "$ENVF"
 fi
@@ -70,5 +76,9 @@ cd "$INSTALL_DIR"
 docker compose pull -q || echo "(could not pull new images, using the ones already here)"
 docker compose up -d
 IP=$(curl -fsS https://api.ipify.org 2>/dev/null || hostname -I | awk '{print $1}')
-say "done. Admin page: http://$IP:${ADMIN_PORT:-8080}/?k=$ADMIN_TOKEN"
+if [ -n "$ADMIN_TOKEN" ]; then
+  say "done. Admin page: http://$IP:${ADMIN_PORT:-8080}/?k=$ADMIN_TOKEN"
+else
+  say "done. Admin page: http://$IP:${ADMIN_PORT:-8080}/?k=<your admin key>  (health: /health)"
+fi
 say "Game address: $IP port ${SERVER_PORT:-19132}"

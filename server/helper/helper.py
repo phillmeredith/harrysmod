@@ -15,6 +15,7 @@ It talks to Docker through /var/run/docker.sock to stop and start the server con
 import cgi  # noqa: deprecated but still in 3.12, and it streams big uploads to disk
 import datetime as dt
 import gzip
+import hmac
 import hashlib
 import html
 import http.client
@@ -53,6 +54,8 @@ BACKUP_HOUR = int(E("BACKUP_HOUR", "4"))      # local hour for the daily backup
 BACKUP_KEEP = int(E("BACKUP_KEEP", "14"))
 ADMIN_PORT = int(E("ADMIN_PORT", "8080"))
 ADMIN_TOKEN = E("ADMIN_TOKEN", "")
+# Alternative to ADMIN_TOKEN: only the SHA-256 (hex) of the key, so setup scripts never hold the key itself.
+ADMIN_TOKEN_SHA256 = E("ADMIN_TOKEN_SHA256", "").strip().lower()
 TZ_NAME = E("TZ", "Europe/London")
 ADDON_BP = E("ADDON_BP_UUID", "f4ce4d62-bc57-410a-a3e5-3d8be65eb3bb")
 ADDON_RP = E("ADDON_RP_UUID", "e9b60629-72a4-4317-a710-dce65aa4e7fd")
@@ -663,7 +666,17 @@ class Admin(http.server.BaseHTTPRequestHandler):
 
     def authed(self):
         q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
-        return ADMIN_TOKEN and q.get("k", [""])[0] == ADMIN_TOKEN
+        k = q.get("k", [""])[0]
+        if not k:
+            return False
+        if ADMIN_TOKEN and hmac.compare_digest(k, ADMIN_TOKEN):
+            return True
+        return bool(ADMIN_TOKEN_SHA256) and hmac.compare_digest(
+            hashlib.sha256(k.encode()).hexdigest(), ADMIN_TOKEN_SHA256)
+
+    def key(self):
+        q = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)
+        return urllib.parse.quote(q.get("k", [""])[0])
 
     def send(self, code, body, ctype="text/html; charset=utf-8"):
         b = body.encode() if isinstance(body, str) else body
@@ -675,10 +688,13 @@ class Admin(http.server.BaseHTTPRequestHandler):
         self.wfile.write(b)
 
     def do_GET(self):
+        if urllib.parse.urlparse(self.path).path == "/health":
+            st = state().get("selftest", "not run yet")
+            return self.send(200, json.dumps({"selftest": st, "server": bds_running()}), "application/json")
         if not self.authed():
             return self.send(404, "not found", "text/plain")
         u = urllib.parse.urlparse(self.path)
-        k = urllib.parse.quote(ADMIN_TOKEN)
+        k = self.key()
         if u.path == "/status.json":
             return self.send(200, json.dumps(status(), indent=1), "application/json")
         if u.path == "/log.txt":
@@ -727,7 +743,7 @@ class Admin(http.server.BaseHTTPRequestHandler):
         if not self.authed():
             return self.send(404, "not found", "text/plain")
         u = urllib.parse.urlparse(self.path)
-        k = urllib.parse.quote(ADMIN_TOKEN)
+        k = self.key()
         back = f'<p><a class=btn href="/?k={k}">Back</a></p>'
         if u.path == "/update":
             threading.Thread(target=check_updates, kwargs={"force": False}, daemon=True).start()
@@ -829,8 +845,8 @@ def seed():
 
 # ---------------------------------------------------------------- main loop
 def main():
-    if not ADMIN_TOKEN or len(ADMIN_TOKEN) < 16:
-        print("ADMIN_TOKEN must be set (16+ characters)", file=sys.stderr)
+    if (not ADMIN_TOKEN or len(ADMIN_TOKEN) < 16) and len(ADMIN_TOKEN_SHA256) != 64:
+        print("ADMIN_TOKEN (16+ characters) or ADMIN_TOKEN_SHA256 must be set", file=sys.stderr)
         sys.exit(2)
     seed()
     srv = Threaded(("0.0.0.0", ADMIN_PORT), Admin)
