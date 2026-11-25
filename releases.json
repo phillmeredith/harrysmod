@@ -1,13 +1,29 @@
 {
-  "latest": "4.4.1",
+  "latest": "4.5.0",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
     "4.2": "Harry's Shapes",
     "4.3": "Horse Models",
-    "4.4": "Lisssa's Horses"
+    "4.4": "Lisssa's Horses",
+    "4.5": "Horse Guide"
   },
   "releases": [
+    {
+      "version": "4.5.0",
+      "date": "2026-11-25",
+      "file": "releases/HarrysEquestrian_v4.5.0.mcaddon",
+      "notes_for_harry": [
+        "A brand new Horse Guide! It opens on a few big buttons with pictures: My horses, The yard, Go riding, EQ Shop, Me and Help",
+        "Tap your horse to open its page: Look after, Tack and lead, Ride, Looks, Poses and tricks, About",
+        "Brush and Give a treat put the brush or a treat straight into your hand",
+        "Put tack on lets you pick tack from your bag and puts it on your horse",
+        "Change your horse's coat from Looks, with a picture of every coat",
+        "Help has How do I...? questions with a Show me button",
+        "Every page has a Back button, so you never get lost"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.4.1",
       "date": "2026-11-25",
@@ -35,7 +51,7 @@
     {
       "version": "4.3.2",
       "date": "2026-11-25",
-      "file": "releases/HarrysEquestrian_v4.3.2.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.3.2.mcaddon",
       "notes_for_harry": [
         "The Realistic horse's cheeks are smooth now, with no tiny pixels",
         "Its mane looks proper and doesn't poke through its face",
