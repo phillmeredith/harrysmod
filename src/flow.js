@@ -29,7 +29,9 @@ const MOD_TREE = [
       {l:"Face markings", tp:"horse", k: leaves(D_FACES, "face:", "horse")},
       {l:"Leg markings", tp:"horse", k: leaves(D_LEGS, "legs:", "horse")},
       {l:"Eyes", tp:"horse", k: leaves(D_EYES, "eyes:", "horse")}]},
-    {l:"Horse models", tp:"horse", k: leaves(["Classic horse","Realistic horse","Picking a model in the Designer","Changing a horse's model","Manes and tails (Realistic)","Tack on a Realistic horse","New horses setting"], "model:", "horse")},
+    {l:"Horse models", tp:"horse", k: leaves(["Classic horse","Realistic horse","Quarter Horse","Arabian","Breton","Fjord","Friesian","Knabstrupper","Mustang","Shire","Thoroughbred","Turkoman","Warmblood","Picking a model in the Designer","Changing a horse's model","Manes and tails","Tack on a different model","New horses setting"], "model:", "horse")},
+    {l:"Tricks and poses", tp:"horse", k: leaves(["Dressage moves","Turns and lying down","Moody moments","Pose groups","Stopping a trick","A trick looks wrong"], "trick:", "horse")},
+    {l:"Lisssa's tack", tp:"item", k: leaves(["3D halters","Cavalleria Toskana saddle pads","Quilted pasture blankets","Rain pasture blankets","Plaid pasture blankets","Getting them from the Guide"], "lisssa:", "item")},
     {l:"Hobby horses", tp:"item", k: leaves(sub("Hobby horses",""), "", "item")},
     {l:"How horses behave", tp:"horse", k: leaves(["Following me","Coming to the whistle","Eating and drinking","Sleeping and naps","Moods and personality","Rearing and bucking","Getting stuck","Making a mess","Rolling","Playing with toys"], "behave:", "horse")}
   ]},
