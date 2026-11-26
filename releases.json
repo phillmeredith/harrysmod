@@ -1,5 +1,5 @@
 {
-  "latest": "4.6.1",
+  "latest": "4.6.2",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -10,6 +10,18 @@
     "4.6": "My Own Horses"
   },
   "releases": [
+    {
+      "version": "4.6.2",
+      "date": "2026-11-26",
+      "file": "releases/HarrysEquestrian_v4.6.2.mcaddon",
+      "notes_for_harry": [
+        "13 new coats by Reese: Barbie, Captivate, Cookie Crumble, Cora, Kodiak, Little Brother, Lona, Lovely, Nightlock, Pascal, Punkin, Timber and Winona",
+        "Captivate, Cookie Crumble, Lovely and Timber look just as Reese painted them on the Realistic horse and the breeds",
+        "Cora was painted for the Arabian, and every other horse can wear her too",
+        "Find them by giving your horse lapis, or spot them on wild horses"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.6.1",
       "date": "2026-11-26",
@@ -34,7 +46,7 @@
     {
       "version": "4.5.1",
       "date": "2026-11-25",
-      "file": "releases/HarrysEquestrian_v4.5.1.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.5.1.mcaddon",
       "notes_for_harry": [
         "Skin Studio can now show your coats on every horse model: Realistic and all the breeds",
         "In Skin Studio's Test ride you can try every mane and tail style, and all the poses and tricks"
