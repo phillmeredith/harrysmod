@@ -1,5 +1,5 @@
 {
- "latest": "4.8.2",
+ "latest": "4.8.3",
  "update_names": {
   "4.0": "Foals and Flying",
   "4.1": "Harry's Designs",
@@ -12,6 +12,17 @@
   "4.8": "Creators' Horses"
  },
  "releases": [
+  {
+   "version": "4.8.3",
+   "date": "2026-11-26",
+   "file": "releases/HarrysEquestrian_v4.8.3.mcaddon",
+   "notes_for_harry": [
+    "Every horse has its tail now, on every model",
+    "No more flat, smudged necks on coats like Cora, Amora, Akhalteke and Ace",
+    "No more gaps at the throat and chest"
+   ],
+   "fixed": []
+  },
   {
    "version": "4.8.2",
    "date": "2026-11-26",
@@ -35,7 +46,7 @@
   {
    "version": "4.8.0",
    "date": "2026-11-26",
-   "file": "releases/HarrysEquestrian_v4.8.0.mcaddon",
+   "file": "archive/HarrysEquestrian_v4.8.0.mcaddon",
    "notes_for_harry": [
     "6 new kinds of horse: Mr Fear's Horse, Breeds and Fantasy, the Marwari, Ashaean and Asheerah x Mr Fear. Pick one in the Horse Designer or the horse's Looks",
     "212 more coats, and lots of them are painted just for the new horses",
