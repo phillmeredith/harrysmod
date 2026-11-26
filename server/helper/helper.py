@@ -465,13 +465,18 @@ def check_updates(force=False, skins_only=False):
         log(f"add-on check failed: {e}")
     if SKINS_URL:
         try:
-            feed = json.loads(fetch(SKINS_URL))
-            v = str(feed["version"])
             s = state()
+            # ?have= tells Skin Studio what is in the game, so Harry sees "Live" or "Waiting"
+            url = SKINS_URL + ("&" if "?" in SKINS_URL else "?") + "have=" + urllib.parse.quote(str(s.get("skins_version") or ""))
+            feed = json.loads(fetch(url))
+            v = str(feed["version"])
             if v != s.get("skins_version") and (force or s.get("held_skins") != v):
                 apply_update("skins", v, urllib.parse.urljoin(SKINS_URL, feed["file"]), force=force)
         except Exception as e:
-            log(f"skins check failed: {e}")
+            msg = f"skins check failed: {e}"
+            if msg != state().get("last_skins_error"):  # checked every minute: don't fill the log
+                save_state(last_skins_error=msg)
+                log(msg)
 
 
 # ---------------------------------------------------------------- world import
