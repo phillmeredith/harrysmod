@@ -1,5 +1,5 @@
 {
-  "latest": "4.6.0",
+  "latest": "4.6.1",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -10,6 +10,16 @@
     "4.6": "My Own Horses"
   },
   "releases": [
+    {
+      "version": "4.6.1",
+      "date": "2026-11-26",
+      "file": "releases/HarrysEquestrian_v4.6.1.mcaddon",
+      "notes_for_harry": [
+        "Every horse model has its fringe back, falling between the ears",
+        "No more dark stripe along the top of the neck on the new horse models"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.6.0",
       "date": "2026-11-26",
@@ -34,7 +44,7 @@
     {
       "version": "4.5.0",
       "date": "2026-11-25",
-      "file": "releases/HarrysEquestrian_v4.5.0.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.5.0.mcaddon",
       "notes_for_harry": [
         "A brand new Horse Guide! It opens on a few big buttons with pictures: My horses, The yard, Go riding, EQ Shop, Me and Help",
         "Tap your horse to open its page: Look after, Tack and lead, Ride, Looks, Poses and tricks, About",
