@@ -1,5 +1,5 @@
 {
- "latest": "4.7.0",
+ "latest": "4.8.0",
  "update_names": {
   "4.0": "Foals and Flying",
   "4.1": "Harry's Designs",
@@ -8,9 +8,22 @@
   "4.4": "Lisssa's Horses",
   "4.5": "Horse Guide",
   "4.6": "My Own Horses",
-  "4.7": "Creators' Coats"
+  "4.7": "Creators' Coats",
+  "4.8": "Creators' Horses"
  },
  "releases": [
+  {
+   "version": "4.8.0",
+   "date": "2026-11-26",
+   "file": "releases/HarrysEquestrian_v4.8.0.mcaddon",
+   "notes_for_harry": [
+    "6 new kinds of horse: Mr Fear's Horse, Breeds and Fantasy, the Marwari, Ashaean and Asheerah x Mr Fear. Pick one in the Horse Designer or the horse's Looks",
+    "212 more coats, and lots of them are painted just for the new horses",
+    "256 new poses from Reese and Asheerah: tap your horse, then Poses and tricks",
+    "181 new pieces of tack from Reese, Asheerah, Soff and Wildfleurs: Horse Guide, Me, Creators' tack"
+   ],
+   "fixed": []
+  },
   {
    "version": "4.7.0",
    "date": "2026-11-26",
@@ -38,7 +51,7 @@
   {
    "version": "4.6.1",
    "date": "2026-11-26",
-   "file": "releases/HarrysEquestrian_v4.6.1.mcaddon",
+   "file": "archive/HarrysEquestrian_v4.6.1.mcaddon",
    "notes_for_harry": [
     "Every horse model has its fringe back, falling between the ears",
     "No more dark stripe along the top of the neck on the new horse models"
