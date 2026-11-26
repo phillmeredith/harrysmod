@@ -1,14 +1,26 @@
 {
-  "latest": "4.5.1",
+  "latest": "4.6.0",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
     "4.2": "Harry's Shapes",
     "4.3": "Horse Models",
     "4.4": "Lisssa's Horses",
-    "4.5": "Horse Guide"
+    "4.5": "Horse Guide",
+    "4.6": "My Own Horses"
   },
   "releases": [
+    {
+      "version": "4.6.0",
+      "date": "2026-11-26",
+      "file": "releases/HarrysEquestrian_v4.6.0.mcaddon",
+      "notes_for_harry": [
+        "Make your own horses in Skin Studio! Paint a horse, pick A new horse of my own, choose its model, mane and tail, dress it in the Tack Room, then tap Make it live",
+        "In the Horse Guide, tap Me then My own horses, and tap a horse to bring it out next to you, ready to ride",
+        "Tap it again and it comes to you, looking like your newest design"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.5.1",
       "date": "2026-11-25",
@@ -37,7 +49,7 @@
     {
       "version": "4.4.1",
       "date": "2026-11-25",
-      "file": "releases/HarrysEquestrian_v4.4.1.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.4.1.mcaddon",
       "notes_for_harry": [
         "Helmets, chestplates and leggings show on you now when you wear them, in every kind of metal",
         "Riding boots go on the right feet and stay on your legs when you walk and ride",
