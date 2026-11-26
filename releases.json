@@ -1,780 +1,793 @@
 {
-  "latest": "4.6.2",
-  "update_names": {
-    "4.0": "Foals and Flying",
-    "4.1": "Harry's Designs",
-    "4.2": "Harry's Shapes",
-    "4.3": "Horse Models",
-    "4.4": "Lisssa's Horses",
-    "4.5": "Horse Guide",
-    "4.6": "My Own Horses"
+ "latest": "4.7.0",
+ "update_names": {
+  "4.0": "Foals and Flying",
+  "4.1": "Harry's Designs",
+  "4.2": "Harry's Shapes",
+  "4.3": "Horse Models",
+  "4.4": "Lisssa's Horses",
+  "4.5": "Horse Guide",
+  "4.6": "My Own Horses",
+  "4.7": "Creators' Coats"
+ },
+ "releases": [
+  {
+   "version": "4.7.0",
+   "date": "2026-11-26",
+   "file": "releases/HarrysEquestrian_v4.7.0.mcaddon",
+   "notes_for_harry": [
+    "480 new coats painted by Reese, Vilegag, Asheerah, Melbee, Wildfleurs, Bianca Sandhope and Soff",
+    "Every creator has their own page of coats: tap your horse, then Looks, then Coat",
+    "Lots of them were painted for Lisssa's breeds and look just as painted on that horse, and every other horse can wear them too",
+    "Wild horses still wear the coats they always did"
+   ],
+   "fixed": []
   },
-  "releases": [
-    {
-      "version": "4.6.2",
-      "date": "2026-11-26",
-      "file": "releases/HarrysEquestrian_v4.6.2.mcaddon",
-      "notes_for_harry": [
-        "13 new coats by Reese: Barbie, Captivate, Cookie Crumble, Cora, Kodiak, Little Brother, Lona, Lovely, Nightlock, Pascal, Punkin, Timber and Winona",
-        "Captivate, Cookie Crumble, Lovely and Timber look just as Reese painted them on the Realistic horse and the breeds",
-        "Cora was painted for the Arabian, and every other horse can wear her too",
-        "Find them by giving your horse lapis, or spot them on wild horses"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.6.1",
-      "date": "2026-11-26",
-      "file": "releases/HarrysEquestrian_v4.6.1.mcaddon",
-      "notes_for_harry": [
-        "Every horse model has its fringe back, falling between the ears",
-        "No more dark stripe along the top of the neck on the new horse models"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.6.0",
-      "date": "2026-11-26",
-      "file": "releases/HarrysEquestrian_v4.6.0.mcaddon",
-      "notes_for_harry": [
-        "Make your own horses in Skin Studio! Paint a horse, pick A new horse of my own, choose its model, mane and tail, dress it in the Tack Room, then tap Make it live",
-        "In the Horse Guide, tap Me then My own horses, and tap a horse to bring it out next to you, ready to ride",
-        "Tap it again and it comes to you, looking like your newest design"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.5.1",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.5.1.mcaddon",
-      "notes_for_harry": [
-        "Skin Studio can now show your coats on every horse model: Realistic and all the breeds",
-        "In Skin Studio's Test ride you can try every mane and tail style, and all the poses and tricks"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.5.0",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.5.0.mcaddon",
-      "notes_for_harry": [
-        "A brand new Horse Guide! It opens on a few big buttons with pictures: My horses, The yard, Go riding, EQ Shop, Me and Help",
-        "Tap your horse to open its page: Look after, Tack and lead, Ride, Looks, Poses and tricks, About",
-        "Brush and Give a treat put the brush or a treat straight into your hand",
-        "Put tack on lets you pick tack from your bag and puts it on your horse",
-        "Change your horse's coat from Looks, with a picture of every coat",
-        "Help has How do I...? questions with a Show me button",
-        "Every page has a Back button, so you never get lost"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.4.1",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.4.1.mcaddon",
-      "notes_for_harry": [
-        "Helmets, chestplates and leggings show on you now when you wear them, in every kind of metal",
-        "Riding boots go on the right feet and stay on your legs when you walk and ride",
-        "The riding helmet and cowboy hat sit on your head"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.4.0",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.4.0.mcaddon",
-      "notes_for_harry": [
-        "11 new kinds of horse made by MoonLightLissa: Quarter Horse, Arabian, Breton, Fjord, Friesian, Knabstrupper, Mustang, Shire, Thoroughbred, Turkoman and Warmblood",
-        "They can wear all your coats, markings and tack, and have their own manes and tails",
-        "New: Tricks and poses! Open a horse's menu and tap Tricks and poses for dressage moves, moody moments and lots of poses",
-        "New in the Horse Guide: Lisssa's tack, with 28 fluffy 3D halters, saddle pads and pasture blankets",
-        "New coat: Lisssa's Guardian"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.3.2",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.3.2.mcaddon",
-      "notes_for_harry": [
-        "The Realistic horse's cheeks are smooth now, with no tiny pixels",
-        "Its mane looks proper and doesn't poke through its face",
-        "Its neck doesn't flicker or clip any more, right down to the bottom"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.3.1",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.3.1.mcaddon",
-      "notes_for_harry": [
-        "Your horses know you on the new server! No more \"You don't have access to this horse\"",
-        "Laura's horses know her too, and leaves make shavings on the crafting table now"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.3.0",
-      "date": "2026-11-25",
-      "file": "archive/HarrysEquestrian_v4.3.0.mcaddon",
-      "notes_for_harry": [
-        "New: pick what kind of horse you want! Classic, or the new Realistic horse made by MoonLightLissa",
-        "When you design a horse, the Designer asks which kind of horse it should be",
-        "Change any of your horses: open its horse menu and tap Horse model",
-        "Realistic horses have mane styles (thick, plaits or hogged) and tail styles (thick, long or short)",
-        "Your horse keeps its coat, tack, name and friends when it changes model",
-        "New coat: Moonlight Dapple",
-        "The Horse Guide has a Horse models page"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.2.1",
-      "date": "2026-11-20",
-      "file": "archive/HarrysEquestrian_v4.2.1.mcaddon",
-      "notes_for_harry": [
-        "Saddle racks and all the other racks are fixed! Your tack sits on the rack now instead of poking through it",
-        "Blankets fold over the rails, leads hang from their hooks and armour drapes over the top of its stand"
-      ],
-      "fixed": [
-        "HBT-6042"
-      ]
-    },
-    {
-      "version": "4.2.0",
-      "date": "2026-11-19",
-      "file": "archive/HarrysEquestrian_v4.2.0.mcaddon",
-      "notes_for_harry": [
-        "Your horses can have their own shape! A horn, a longer mane or tail, bigger ears or feathery hooves from Skin Studio's Shape Room",
-        "The shape goes on every horse wearing that coat of yours, foals too when Skin Studio makes one for them"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.1.0",
-      "date": "2026-11-19",
-      "file": "archive/HarrysEquestrian_v4.1.0.mcaddon",
-      "notes_for_harry": [
-        "Your own designs! 24 coats, 12 hobby horses and 8 of every kind of tack, ready for you to paint in Skin Studio",
-        "Open the Horse Guide and tap Harry's designs to give your horse one of your coats, or get your hobby horses and tack",
-        "Tack you paint works just like the piece you painted it on, and foals can take after a parent in your coat"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.7",
-      "date": "2026-11-18",
-      "file": "archive/HarrysEquestrian_v4.0.7.mcaddon",
-      "notes_for_harry": [
-        "If your horse is too hungry or thirsty to go faster, it tells you what to give it",
-        "A good meal and two buckets of water make your horse strong again straight away"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.6",
-      "date": "2026-11-14",
-      "file": "archive/HarrysEquestrian_v4.0.6.mcaddon",
-      "notes_for_harry": [
-        "A flying checklist in the bottom-left corner shows what your horse still needs to fly",
-        "Each piece gets a tick when it goes on",
-        "The Horse Guide's Flying page explains the order"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.5",
-      "date": "2026-11-14",
-      "file": "archive/HarrysEquestrian_v4.0.5.mcaddon",
-      "notes_for_harry": [
-        "Foals keep growing and mums keep counting down even when you're far away",
-        "The foal timer shows mares that are out of sight too"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.4",
-      "date": "2026-11-14",
-      "file": "archive/HarrysEquestrian_v4.0.4.mcaddon",
-      "notes_for_harry": [
-        "A foal on a lead follows whoever is holding it",
-        "Only a foal's owner can lead it",
-        "When you let go, a foal walks back to its own mum"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.3",
-      "date": "2026-11-14",
-      "file": "archive/HarrysEquestrian_v4.0.3.mcaddon",
-      "notes_for_harry": [
-        "You can lead foals now, even without tack"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.2",
-      "date": "2026-11-12",
-      "file": "archive/HarrysEquestrian_v4.0.2.mcaddon",
-      "notes_for_harry": [
-        "The Paddock Feeder shows both halves now"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.1",
-      "date": "2026-11-12",
-      "file": "archive/HarrysEquestrian_v4.0.1.mcaddon",
-      "notes_for_harry": [
-        "Foals are back to their proper coats"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "4.0.0",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v4.0.0.mcaddon",
-      "notes_for_harry": [
-        "A big new version number!",
-        "Stack jump standards and they sort themselves: feet at the bottom, the top piece on top"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.39",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.39.mcaddon",
-      "notes_for_harry": [
-        "Stack jump standards and they sort themselves, so you can get the fancy diagonal top"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.38",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.38.mcaddon",
-      "notes_for_harry": [
-        "Foals' coats put back the way they were"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.37",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.37.mcaddon",
-      "notes_for_harry": [
-        "Foals painted again to look more like their mums"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.36",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.36.mcaddon",
-      "notes_for_harry": [
-        "Arena letters don't flicker any more",
-        "Foal coats painted with more detail"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.35",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.35.mcaddon",
-      "notes_for_harry": [
-        "Foal coats painted with more detail"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.34",
-      "date": "2026-11-11",
-      "file": "archive/HarrysEquestrian_v3.0.34.mcaddon",
-      "notes_for_harry": [
-        "Look up while flying forward to climb",
-        "Landing after a long glide doesn't hurt your horse",
-        "Flying into a wall makes your horse hover instead of falling",
-        "The saddle can't slip off in the air"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.33",
-      "date": "2026-11-10",
-      "file": "archive/HarrysEquestrian_v3.0.33.mcaddon",
-      "notes_for_harry": [
-        "Letter boards in both arenas, with a button by each entrance to turn them on and off",
-        "Move letter boards or add more from the block menu",
-        "Show jumps look like the real ones, with proper posts and end pieces"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.32",
-      "date": "2026-11-10",
-      "file": "archive/HarrysEquestrian_v3.0.32.mcaddon",
-      "notes_for_harry": [
-        "Tap forward 3 times quickly to take off on a winged horse",
-        "Tap back 3 times quickly to land"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.31",
-      "date": "2026-11-10",
-      "file": "archive/HarrysEquestrian_v3.0.31.mcaddon",
-      "notes_for_harry": [
-        "Twins are born half the time",
-        "Every foal has its own baby coat, and some get a surprise coat",
-        "A Fly! button in the horse menu",
-        "Copper, iron, gold, diamond and netherite helmets, chestplates and leggings can be worn"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.30",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.30.mcaddon",
-      "notes_for_harry": [
-        "Horses lying down don't slide around",
-        "Whistled horses don't push against fences"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.29",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.29.mcaddon",
-      "notes_for_harry": [
-        "Horses take naps in the day too",
-        "The whistle won't call horses over fences",
-        "Horses can step up one block"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.28",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.28.mcaddon",
-      "notes_for_harry": [
-        "Horses step up one block by themselves"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.27",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.27.mcaddon",
-      "notes_for_harry": [
-        "Bedding only gets dirty when pee and poo is turned on"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.26",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.26.mcaddon",
-      "notes_for_harry": [
-        "Sometimes two foals are born at once: twins!"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.25",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.25.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.24",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.24.mcaddon",
-      "notes_for_harry": [
-        "Jumps get higher the longer you hold the jump button",
-        "The foal timer sits in the bottom-left corner on one line"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.23",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.23.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.22",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.22.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.21",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.21.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.20",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.20.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.19",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.19.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.18",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.18.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.17",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.17.mcaddon",
-      "notes_for_harry": [
-        "A timer shows when a foal is coming"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.16",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.16.mcaddon",
-      "notes_for_harry": [
-        "Every item checked to make sure it does its job"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.15",
-      "date": "2026-11-07",
-      "file": null,
-      "notes_for_harry": [
-        "Play together over LAN with Laura"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.14",
-      "date": "2026-11-07",
-      "file": "archive/HarrysEquestrian_v3.0.14.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.13",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.13.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.12",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.12.mcaddon",
-      "notes_for_harry": [
-        "Horses in the arena don't vanish home by mistake"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.11",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.11.mcaddon",
-      "notes_for_harry": [
-        "A horse's care day now runs from 8 PM to 8 PM, so breakfast counts"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.10",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.10.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.9",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.9.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.8",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.8.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.7",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.7.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.6",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.6.mcaddon",
-      "notes_for_harry": [
-        "Hold the jump button until the bar fills for a big jump",
-        "Bigger jumps give more jump points"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.5",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.5.mcaddon",
-      "notes_for_harry": [
-        "Horses jump properly over show jumps"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.4",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.4.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.3",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.3.mcaddon",
-      "notes_for_harry": [
-        "Poo and mess land on the real floor of the stable"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.2",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.2.mcaddon",
-      "notes_for_harry": [
-        "Mess spreads to free spots in the stable"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.1",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.1.mcaddon",
-      "notes_for_harry": [
-        "Hobby horses look right when you ride them"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "3.0.0",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v3.0.0.mcaddon",
-      "notes_for_harry": [
-        "Lots of new art: blocks, racks, rider poses, coat pictures, paintings of your horses and mood bubbles"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.5",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.5.mcaddon",
-      "notes_for_harry": [
-        "Horses sometimes refuse a jump, rear or buck, like real horses",
-        "The jump button is the only way to earn jump points",
-        "Take all the tack off in one tap"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.4",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.4.mcaddon",
-      "notes_for_harry": [
-        "Horses move their legs and heads when they walk, trot and canter"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.3",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.3.mcaddon",
-      "notes_for_harry": [
-        "Fixes to how horses move"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.2",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.2.mcaddon",
-      "notes_for_harry": [
-        "Poo stays where it lands",
-        "Horse animations fixed"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.1",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.1.mcaddon",
-      "notes_for_harry": [
-        "If a horse gets stuck in a wall, it gets rescued"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "2.0.0",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v2.0.0.mcaddon",
-      "notes_for_harry": [
-        "Shows: clear round, bending poles and barrel racing",
-        "Win rosettes for the Hall of Fame",
-        "Marked hacks and trips in the horsebox to the beach and the forest"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.10.0",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v1.10.0.mcaddon",
-      "notes_for_harry": [
-        "Yard day: a Jobs Board, turn out and Goodnight Horses",
-        "Fran the Farrier comes to visit",
-        "The Horse Book with 52 horse cards"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.9.0",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v1.9.0.mcaddon",
-      "notes_for_harry": [
-        "My horses: every horse has its own personality and a passport",
-        "Calm mode"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.8.2",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v1.8.2.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.8.1",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v1.8.1.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.8.0",
-      "date": "2026-11-06",
-      "file": "archive/HarrysEquestrian_v1.8.0.mcaddon",
-      "notes_for_harry": [
-        "The Horse Designer: make your own horse from 23 breeds"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.7.3",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.7.3.mcaddon",
-      "notes_for_harry": [
-        "Harry's Yard: the stables, school and arenas, with all 17 horses"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.7.2",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.7.2.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.7.1",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.7.1.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.7",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.7.mcaddon",
-      "notes_for_harry": [
-        "Harry's Yard, built like the real riding centre"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.6.1",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.6.1.mcaddon",
-      "notes_for_harry": [
-        "Small fixes to make things work better"
-      ],
-      "fixed": []
-    },
-    {
-      "version": "1.6.0",
-      "date": "2026-11-05",
-      "file": "archive/HarrysEquestrian_v1.6.0.mcaddon",
-      "notes_for_harry": [
-        "The first version: horses, coats and tack"
-      ],
-      "fixed": []
-    }
-  ]
+  {
+   "version": "4.6.2",
+   "date": "2026-11-26",
+   "file": "releases/HarrysEquestrian_v4.6.2.mcaddon",
+   "notes_for_harry": [
+    "13 new coats by Reese: Barbie, Captivate, Cookie Crumble, Cora, Kodiak, Little Brother, Lona, Lovely, Nightlock, Pascal, Punkin, Timber and Winona",
+    "Captivate, Cookie Crumble, Lovely and Timber look just as Reese painted them on the Realistic horse and the breeds",
+    "Cora was painted for the Arabian, and every other horse can wear her too",
+    "Find them by giving your horse lapis, or spot them on wild horses"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.6.1",
+   "date": "2026-11-26",
+   "file": "releases/HarrysEquestrian_v4.6.1.mcaddon",
+   "notes_for_harry": [
+    "Every horse model has its fringe back, falling between the ears",
+    "No more dark stripe along the top of the neck on the new horse models"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.6.0",
+   "date": "2026-11-26",
+   "file": "archive/HarrysEquestrian_v4.6.0.mcaddon",
+   "notes_for_harry": [
+    "Make your own horses in Skin Studio! Paint a horse, pick A new horse of my own, choose its model, mane and tail, dress it in the Tack Room, then tap Make it live",
+    "In the Horse Guide, tap Me then My own horses, and tap a horse to bring it out next to you, ready to ride",
+    "Tap it again and it comes to you, looking like your newest design"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.5.1",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.5.1.mcaddon",
+   "notes_for_harry": [
+    "Skin Studio can now show your coats on every horse model: Realistic and all the breeds",
+    "In Skin Studio's Test ride you can try every mane and tail style, and all the poses and tricks"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.5.0",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.5.0.mcaddon",
+   "notes_for_harry": [
+    "A brand new Horse Guide! It opens on a few big buttons with pictures: My horses, The yard, Go riding, EQ Shop, Me and Help",
+    "Tap your horse to open its page: Look after, Tack and lead, Ride, Looks, Poses and tricks, About",
+    "Brush and Give a treat put the brush or a treat straight into your hand",
+    "Put tack on lets you pick tack from your bag and puts it on your horse",
+    "Change your horse's coat from Looks, with a picture of every coat",
+    "Help has How do I...? questions with a Show me button",
+    "Every page has a Back button, so you never get lost"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.4.1",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.4.1.mcaddon",
+   "notes_for_harry": [
+    "Helmets, chestplates and leggings show on you now when you wear them, in every kind of metal",
+    "Riding boots go on the right feet and stay on your legs when you walk and ride",
+    "The riding helmet and cowboy hat sit on your head"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.4.0",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.4.0.mcaddon",
+   "notes_for_harry": [
+    "11 new kinds of horse made by MoonLightLissa: Quarter Horse, Arabian, Breton, Fjord, Friesian, Knabstrupper, Mustang, Shire, Thoroughbred, Turkoman and Warmblood",
+    "They can wear all your coats, markings and tack, and have their own manes and tails",
+    "New: Tricks and poses! Open a horse's menu and tap Tricks and poses for dressage moves, moody moments and lots of poses",
+    "New in the Horse Guide: Lisssa's tack, with 28 fluffy 3D halters, saddle pads and pasture blankets",
+    "New coat: Lisssa's Guardian"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.3.2",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.3.2.mcaddon",
+   "notes_for_harry": [
+    "The Realistic horse's cheeks are smooth now, with no tiny pixels",
+    "Its mane looks proper and doesn't poke through its face",
+    "Its neck doesn't flicker or clip any more, right down to the bottom"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.3.1",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.3.1.mcaddon",
+   "notes_for_harry": [
+    "Your horses know you on the new server! No more \"You don't have access to this horse\"",
+    "Laura's horses know her too, and leaves make shavings on the crafting table now"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.3.0",
+   "date": "2026-11-25",
+   "file": "archive/HarrysEquestrian_v4.3.0.mcaddon",
+   "notes_for_harry": [
+    "New: pick what kind of horse you want! Classic, or the new Realistic horse made by MoonLightLissa",
+    "When you design a horse, the Designer asks which kind of horse it should be",
+    "Change any of your horses: open its horse menu and tap Horse model",
+    "Realistic horses have mane styles (thick, plaits or hogged) and tail styles (thick, long or short)",
+    "Your horse keeps its coat, tack, name and friends when it changes model",
+    "New coat: Moonlight Dapple",
+    "The Horse Guide has a Horse models page"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.2.1",
+   "date": "2026-11-20",
+   "file": "archive/HarrysEquestrian_v4.2.1.mcaddon",
+   "notes_for_harry": [
+    "Saddle racks and all the other racks are fixed! Your tack sits on the rack now instead of poking through it",
+    "Blankets fold over the rails, leads hang from their hooks and armour drapes over the top of its stand"
+   ],
+   "fixed": [
+    "HBT-6042"
+   ]
+  },
+  {
+   "version": "4.2.0",
+   "date": "2026-11-19",
+   "file": "archive/HarrysEquestrian_v4.2.0.mcaddon",
+   "notes_for_harry": [
+    "Your horses can have their own shape! A horn, a longer mane or tail, bigger ears or feathery hooves from Skin Studio's Shape Room",
+    "The shape goes on every horse wearing that coat of yours, foals too when Skin Studio makes one for them"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.1.0",
+   "date": "2026-11-19",
+   "file": "archive/HarrysEquestrian_v4.1.0.mcaddon",
+   "notes_for_harry": [
+    "Your own designs! 24 coats, 12 hobby horses and 8 of every kind of tack, ready for you to paint in Skin Studio",
+    "Open the Horse Guide and tap Harry's designs to give your horse one of your coats, or get your hobby horses and tack",
+    "Tack you paint works just like the piece you painted it on, and foals can take after a parent in your coat"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.7",
+   "date": "2026-11-18",
+   "file": "archive/HarrysEquestrian_v4.0.7.mcaddon",
+   "notes_for_harry": [
+    "If your horse is too hungry or thirsty to go faster, it tells you what to give it",
+    "A good meal and two buckets of water make your horse strong again straight away"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.6",
+   "date": "2026-11-14",
+   "file": "archive/HarrysEquestrian_v4.0.6.mcaddon",
+   "notes_for_harry": [
+    "A flying checklist in the bottom-left corner shows what your horse still needs to fly",
+    "Each piece gets a tick when it goes on",
+    "The Horse Guide's Flying page explains the order"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.5",
+   "date": "2026-11-14",
+   "file": "archive/HarrysEquestrian_v4.0.5.mcaddon",
+   "notes_for_harry": [
+    "Foals keep growing and mums keep counting down even when you're far away",
+    "The foal timer shows mares that are out of sight too"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.4",
+   "date": "2026-11-14",
+   "file": "archive/HarrysEquestrian_v4.0.4.mcaddon",
+   "notes_for_harry": [
+    "A foal on a lead follows whoever is holding it",
+    "Only a foal's owner can lead it",
+    "When you let go, a foal walks back to its own mum"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.3",
+   "date": "2026-11-14",
+   "file": "archive/HarrysEquestrian_v4.0.3.mcaddon",
+   "notes_for_harry": [
+    "You can lead foals now, even without tack"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.2",
+   "date": "2026-11-12",
+   "file": "archive/HarrysEquestrian_v4.0.2.mcaddon",
+   "notes_for_harry": [
+    "The Paddock Feeder shows both halves now"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.1",
+   "date": "2026-11-12",
+   "file": "archive/HarrysEquestrian_v4.0.1.mcaddon",
+   "notes_for_harry": [
+    "Foals are back to their proper coats"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "4.0.0",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v4.0.0.mcaddon",
+   "notes_for_harry": [
+    "A big new version number!",
+    "Stack jump standards and they sort themselves: feet at the bottom, the top piece on top"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.39",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.39.mcaddon",
+   "notes_for_harry": [
+    "Stack jump standards and they sort themselves, so you can get the fancy diagonal top"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.38",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.38.mcaddon",
+   "notes_for_harry": [
+    "Foals' coats put back the way they were"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.37",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.37.mcaddon",
+   "notes_for_harry": [
+    "Foals painted again to look more like their mums"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.36",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.36.mcaddon",
+   "notes_for_harry": [
+    "Arena letters don't flicker any more",
+    "Foal coats painted with more detail"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.35",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.35.mcaddon",
+   "notes_for_harry": [
+    "Foal coats painted with more detail"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.34",
+   "date": "2026-11-11",
+   "file": "archive/HarrysEquestrian_v3.0.34.mcaddon",
+   "notes_for_harry": [
+    "Look up while flying forward to climb",
+    "Landing after a long glide doesn't hurt your horse",
+    "Flying into a wall makes your horse hover instead of falling",
+    "The saddle can't slip off in the air"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.33",
+   "date": "2026-11-10",
+   "file": "archive/HarrysEquestrian_v3.0.33.mcaddon",
+   "notes_for_harry": [
+    "Letter boards in both arenas, with a button by each entrance to turn them on and off",
+    "Move letter boards or add more from the block menu",
+    "Show jumps look like the real ones, with proper posts and end pieces"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.32",
+   "date": "2026-11-10",
+   "file": "archive/HarrysEquestrian_v3.0.32.mcaddon",
+   "notes_for_harry": [
+    "Tap forward 3 times quickly to take off on a winged horse",
+    "Tap back 3 times quickly to land"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.31",
+   "date": "2026-11-10",
+   "file": "archive/HarrysEquestrian_v3.0.31.mcaddon",
+   "notes_for_harry": [
+    "Twins are born half the time",
+    "Every foal has its own baby coat, and some get a surprise coat",
+    "A Fly! button in the horse menu",
+    "Copper, iron, gold, diamond and netherite helmets, chestplates and leggings can be worn"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.30",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.30.mcaddon",
+   "notes_for_harry": [
+    "Horses lying down don't slide around",
+    "Whistled horses don't push against fences"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.29",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.29.mcaddon",
+   "notes_for_harry": [
+    "Horses take naps in the day too",
+    "The whistle won't call horses over fences",
+    "Horses can step up one block"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.28",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.28.mcaddon",
+   "notes_for_harry": [
+    "Horses step up one block by themselves"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.27",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.27.mcaddon",
+   "notes_for_harry": [
+    "Bedding only gets dirty when pee and poo is turned on"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.26",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.26.mcaddon",
+   "notes_for_harry": [
+    "Sometimes two foals are born at once: twins!"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.25",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.25.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.24",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.24.mcaddon",
+   "notes_for_harry": [
+    "Jumps get higher the longer you hold the jump button",
+    "The foal timer sits in the bottom-left corner on one line"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.23",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.23.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.22",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.22.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.21",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.21.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.20",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.20.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.19",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.19.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.18",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.18.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.17",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.17.mcaddon",
+   "notes_for_harry": [
+    "A timer shows when a foal is coming"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.16",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.16.mcaddon",
+   "notes_for_harry": [
+    "Every item checked to make sure it does its job"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.15",
+   "date": "2026-11-07",
+   "file": null,
+   "notes_for_harry": [
+    "Play together over LAN with Laura"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.14",
+   "date": "2026-11-07",
+   "file": "archive/HarrysEquestrian_v3.0.14.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.13",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.13.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.12",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.12.mcaddon",
+   "notes_for_harry": [
+    "Horses in the arena don't vanish home by mistake"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.11",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.11.mcaddon",
+   "notes_for_harry": [
+    "A horse's care day now runs from 8 PM to 8 PM, so breakfast counts"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.10",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.10.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.9",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.9.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.8",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.8.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.7",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.7.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.6",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.6.mcaddon",
+   "notes_for_harry": [
+    "Hold the jump button until the bar fills for a big jump",
+    "Bigger jumps give more jump points"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.5",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.5.mcaddon",
+   "notes_for_harry": [
+    "Horses jump properly over show jumps"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.4",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.4.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.3",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.3.mcaddon",
+   "notes_for_harry": [
+    "Poo and mess land on the real floor of the stable"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.2",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.2.mcaddon",
+   "notes_for_harry": [
+    "Mess spreads to free spots in the stable"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.1",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.1.mcaddon",
+   "notes_for_harry": [
+    "Hobby horses look right when you ride them"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "3.0.0",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v3.0.0.mcaddon",
+   "notes_for_harry": [
+    "Lots of new art: blocks, racks, rider poses, coat pictures, paintings of your horses and mood bubbles"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.5",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.5.mcaddon",
+   "notes_for_harry": [
+    "Horses sometimes refuse a jump, rear or buck, like real horses",
+    "The jump button is the only way to earn jump points",
+    "Take all the tack off in one tap"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.4",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.4.mcaddon",
+   "notes_for_harry": [
+    "Horses move their legs and heads when they walk, trot and canter"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.3",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.3.mcaddon",
+   "notes_for_harry": [
+    "Fixes to how horses move"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.2",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.2.mcaddon",
+   "notes_for_harry": [
+    "Poo stays where it lands",
+    "Horse animations fixed"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.1",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.1.mcaddon",
+   "notes_for_harry": [
+    "If a horse gets stuck in a wall, it gets rescued"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "2.0.0",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v2.0.0.mcaddon",
+   "notes_for_harry": [
+    "Shows: clear round, bending poles and barrel racing",
+    "Win rosettes for the Hall of Fame",
+    "Marked hacks and trips in the horsebox to the beach and the forest"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.10.0",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v1.10.0.mcaddon",
+   "notes_for_harry": [
+    "Yard day: a Jobs Board, turn out and Goodnight Horses",
+    "Fran the Farrier comes to visit",
+    "The Horse Book with 52 horse cards"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.9.0",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v1.9.0.mcaddon",
+   "notes_for_harry": [
+    "My horses: every horse has its own personality and a passport",
+    "Calm mode"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.8.2",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v1.8.2.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.8.1",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v1.8.1.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.8.0",
+   "date": "2026-11-06",
+   "file": "archive/HarrysEquestrian_v1.8.0.mcaddon",
+   "notes_for_harry": [
+    "The Horse Designer: make your own horse from 23 breeds"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.7.3",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.7.3.mcaddon",
+   "notes_for_harry": [
+    "Harry's Yard: the stables, school and arenas, with all 17 horses"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.7.2",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.7.2.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.7.1",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.7.1.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.7",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.7.mcaddon",
+   "notes_for_harry": [
+    "Harry's Yard, built like the real riding centre"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.6.1",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.6.1.mcaddon",
+   "notes_for_harry": [
+    "Small fixes to make things work better"
+   ],
+   "fixed": []
+  },
+  {
+   "version": "1.6.0",
+   "date": "2026-11-05",
+   "file": "archive/HarrysEquestrian_v1.6.0.mcaddon",
+   "notes_for_harry": [
+    "The first version: horses, coats and tack"
+   ],
+   "fixed": []
+  }
+ ]
 }
