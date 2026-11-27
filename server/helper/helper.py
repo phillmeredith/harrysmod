@@ -50,6 +50,9 @@ BDS_PORT = int(E("SERVER_PORT", "19132"))
 RELEASES_URL = E("RELEASES_URL", "https://mod.phillm.dev/releases.json")
 SKINS_URL = E("SKINS_URL", "")                # optional: {"version": "...", "file": "<url of .mcpack>"}
 CHECK_MINUTES = int(E("CHECK_MINUTES", "10"))
+# "fixes": only versions that change the last number install by themselves; new features wait for Approve.
+# "all": everything installs by itself (the old behaviour).
+AUTO_UPDATE = E("AUTO_UPDATE", "fixes").strip().lower()
 BACKUP_HOUR = int(E("BACKUP_HOUR", "4"))      # local hour for the daily backup
 BACKUP_KEEP = int(E("BACKUP_KEEP", "14"))
 ADMIN_PORT = int(E("ADMIN_PORT", "8080"))
@@ -484,7 +487,14 @@ def check_updates(force=False, skins_only=False):
         have = installed_version(ADDON_BP)
         s = state()
         if (have is None or vtuple(v) > vtuple(have)) and (force or s.get("held_addon") != v):
-            apply_update("addon", v, url, force=force)
+            feature = have is not None and vtuple(v)[:2] != vtuple(have)[:2]
+            if feature and AUTO_UPDATE != "all" and s.get("approved_addon") != v:
+                msg = f"addon {v} waits for your Approve (new features: try it in single-player first)"
+                if s.get("pending") != msg:
+                    save_state(pending=msg, awaiting_approval=v)
+                    log(f"addon {v} is a feature update, waiting for Approve on the admin page")
+            else:
+                apply_update("addon", v, url, force=force)
     except StopIteration:
         pass
     except Exception as e:
@@ -766,6 +776,7 @@ class Admin(http.server.BaseHTTPRequestHandler):
                 "selftest": s.get("selftest", "not run yet"), "server": bds_running(),
                 "addon": installed_version(ADDON_BP), "skins": s.get("skins_version"),
                 "skins_waiting": pend.split(" ")[1] if pend.startswith("skins ") else None,
+                "addon_awaiting_approval": s.get("awaiting_approval") or None,
             }), "application/json", cors=True)
         if not self.authed():
             return self.send(404, "not found", "text/plain")
@@ -800,10 +811,12 @@ class Admin(http.server.BaseHTTPRequestHandler):
                                     ("Last update", st["last_update"]), ("Waiting", st["pending"]),
                                     ("Held back", st["held"]), ("Last backup", st["last_backup"]),
                                     ("World imported", st["imported"]), ("Self-test", st["selftest"])] if b not in (None, ""))
+        aw = state().get("awaiting_approval")
+        approve = (f'<form method=post action="/approve?k={k}" style=display:inline><button>Approve Harry\'s Equestrian {html.escape(aw)}</button></form>' if aw else "")
         bl = "".join(f'<li><a href="/backup?k={k}&f={urllib.parse.quote(b)}">{html.escape(b)}</a></li>' for b in st["backups"]) or "<li class=muted>none yet</li>"
         body = f"""<div class=card><table>{rows}</table></div>
 <div class=card><h2>Do something</h2>
-<form method=post action="/update?k={k}" style=display:inline><button>Check for an update now</button></form>
+{approve}<form method=post action="/update?k={k}" style=display:inline><button>Check for an update now</button></form>
 <form method=post action="/backup-now?k={k}" style=display:inline><button>Back up now</button></form>
 <a class=btn href="/log.txt?k={k}">Server log</a></div>
 <div class=card><h2>Who can join</h2><p class=muted>Xbox gamertags, one per line, spelt exactly as in Minecraft, capitals included (HariboHarry25, not hariboharry25).</p>
@@ -824,6 +837,14 @@ class Admin(http.server.BaseHTTPRequestHandler):
         if u.path == "/update":
             threading.Thread(target=check_updates, kwargs={"force": False}, daemon=True).start()
             return self.send(200, PAGE.format(body=f"<div class=card>Checking now. If nobody is playing and there is a new version, the server restarts in a minute or two.</div>{back}"))
+        if u.path == "/approve":
+            v = state().get("awaiting_approval")
+            if not v:
+                return self.send(200, PAGE.format(body=f"<div class=card>Nothing is waiting for approval.</div>{back}"))
+            save_state(approved_addon=v, awaiting_approval="")
+            log(f"addon {v} approved on the admin page")
+            threading.Thread(target=check_updates, kwargs={"force": False}, daemon=True).start()
+            return self.send(200, PAGE.format(body=f"<div class=card>Approved {html.escape(v)}. It goes on as soon as nobody is playing.</div>{back}"))
         if u.path == "/backup-now":
             def job():
                 n = players_online()
