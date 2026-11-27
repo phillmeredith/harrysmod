@@ -1,5 +1,5 @@
 {
-  "latest": "4.9.4",
+  "latest": "4.9.5",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -13,6 +13,16 @@
     "4.9": "Smooth Horses"
   },
   "releases": [
+    {
+      "version": "4.9.5",
+      "date": "2026-11-27",
+      "file": "releases/HarrysEquestrian_v4.9.5.mcaddon",
+      "notes_for_harry": [
+        "The poses are back",
+        "Another lag test: only Classic, Realistic and Naomi's horses for now. The others look Classic for a bit and come back soon"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.9.4",
       "date": "2026-11-27",
@@ -35,7 +45,7 @@
     {
       "version": "4.9.2",
       "date": "2026-11-27",
-      "file": "releases/HarrysEquestrian_v4.9.2.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.9.2.mcaddon",
       "notes_for_harry": [
         "Horses only draw the tack and markings they are wearing, so the game runs smoother near lots of horses",
         "A smaller download, so joining is quicker"
