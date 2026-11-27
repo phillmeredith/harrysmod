@@ -1,5 +1,5 @@
 {
-  "latest": "4.9.0",
+  "latest": "4.9.1",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -13,6 +13,16 @@
     "4.9": "Smooth Horses"
   },
   "releases": [
+    {
+      "version": "4.9.1",
+      "date": "2026-11-27",
+      "file": "releases/HarrysEquestrian_v4.9.1.mcaddon",
+      "notes_for_harry": [
+        "Horses with creator coats load much faster, so the game shouldn't freeze when they come into view",
+        "Every coat looks just the same as before"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.9.0",
       "date": "2026-11-27",
@@ -35,7 +45,7 @@
     {
       "version": "4.8.3",
       "date": "2026-11-26",
-      "file": "releases/HarrysEquestrian_v4.8.3.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.8.3.mcaddon",
       "notes_for_harry": [
         "Every horse has its tail now, on every model",
         "No more flat, smudged necks on coats like Cora, Amora, Akhalteke and Ace",
