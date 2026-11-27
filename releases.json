@@ -1,5 +1,5 @@
 {
-  "latest": "4.9.2",
+  "latest": "4.9.3",
   "update_names": {
     "4.0": "Foals and Flying",
     "4.1": "Harry's Designs",
@@ -13,6 +13,16 @@
     "4.9": "Smooth Horses"
   },
   "releases": [
+    {
+      "version": "4.9.3",
+      "date": "2026-11-27",
+      "file": "releases/HarrysEquestrian_v4.9.3.mcaddon",
+      "notes_for_harry": [
+        "A test to stop the lag: Mr Fear's horses look like Classic horses for now, and they keep their own shape for later",
+        "The creator coats show their Classic picture for now, and they come back very soon"
+      ],
+      "fixed": []
+    },
     {
       "version": "4.9.2",
       "date": "2026-11-27",
@@ -36,7 +46,7 @@
     {
       "version": "4.9.0",
       "date": "2026-11-27",
-      "file": "releases/HarrysEquestrian_v4.9.0.mcaddon",
+      "file": "archive/HarrysEquestrian_v4.9.0.mcaddon",
       "notes_for_harry": [
         "No more freezing when horses come into view, on the server and at home",
         "Tricks and poses look just the same, they just load much faster"
