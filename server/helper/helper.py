@@ -249,8 +249,16 @@ def install_pack(src_dir, m, folder_name, top=True):
     for path, old in find_packs(packs_dir):
         if old["header"]["uuid"] == uuid:
             shutil.rmtree(path)
-    shutil.copytree(src_dir, os.path.join(packs_dir, folder_name))
-    lst = [e for e in world_pack_list(kind) if e.get("pack_id") != uuid]
+    dest = os.path.join(packs_dir, folder_name)
+    gone_uuid = None
+    if os.path.exists(dest):  # another pack (e.g. an older skins pack with other uuids) used this folder
+        try:
+            gone_uuid = json.load(open(os.path.join(dest, "manifest.json")))["header"]["uuid"]
+        except Exception:
+            pass
+        shutil.rmtree(dest)
+    shutil.copytree(src_dir, dest)
+    lst = [e for e in world_pack_list(kind) if e.get("pack_id") not in (uuid, gone_uuid)]
     entry = {"pack_id": uuid, "version": version}
     lst = [entry] + lst if top else lst + [entry]
     write_world_pack_list(kind, lst)
@@ -383,6 +391,19 @@ def addon_answers():
     return False
 
 
+def _install(kind, by, packs):
+    if kind == "addon":
+        install_pack(by[ADDON_BP][0], by[ADDON_BP][1], "HarrysEquestrian_BP")
+        # the add-on's resource pack goes UNDER the skins pack, if there is one
+        skins = state().get("skins_uuid")
+        install_pack(by[ADDON_RP][0], by[ADDON_RP][1], "HarrysEquestrian_RP", top=not skins)
+    else:
+        for p, m in packs:
+            k, u, _ = install_pack(p, m, "HarrysHorseSkins", top=True)
+            if k == "resource":
+                save_state(skins_uuid=u)
+
+
 def apply_update(kind, version, url, force=False):
     """kind: 'addon' or 'skins'."""
     with LOCK:
@@ -418,15 +439,14 @@ def apply_update(kind, version, url, force=False):
             snap = snapshot_packs()
             if bds_running():
                 bds_stop()
-            if kind == "addon":
-                install_pack(by[ADDON_BP][0], by[ADDON_BP][1], "HarrysEquestrian_BP")
-                # the add-on's resource pack goes UNDER the skins pack, if there is one
-                skins = state().get("skins_uuid")
-                install_pack(by[ADDON_RP][0], by[ADDON_RP][1], "HarrysEquestrian_RP", top=not skins)
-            else:
-                for p, m in packs:
-                    k, u, _ = install_pack(p, m, "HarrysHorseSkins", top=True)
-                    save_state(skins_uuid=u)
+            try:
+                _install(kind, by if kind == "addon" else None, packs)
+            except Exception as e:
+                log(f"{kind} {version}: install failed ({e}), putting the old packs back")
+                restore_packs(snap)
+                bds_start()
+                save_state(held=f"{kind} {version} held: install failed ({e})", **{f"held_{kind}": version})
+                return False
             since = time.time()
             bds_start()
             if wait_started(since) and addon_answers():
@@ -443,6 +463,12 @@ def apply_update(kind, version, url, force=False):
             bds_start()
             save_state(held=f"{kind} {version} held: the server or add-on would not start with it, still on the old one",
                        **{f"held_{kind}": version})
+            return False
+        except Exception as e:
+            log(f"{kind} {version} failed: {e}")
+            if not bds_running():
+                bds_start()
+            save_state(held=f"{kind} {version} held: {e}", **{f"held_{kind}": version})
             return False
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
