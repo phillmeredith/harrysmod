@@ -348,6 +348,59 @@ def backup(reason="daily", restart=True):
         return out
 
 
+def live_backup(reason="manual"):
+    """Back up while people are playing, without stopping the server: Bedrock's save hold / save query /
+    save resume. The files are copied cut to the lengths the server reports, which is how Bedrock wants it."""
+    with LOCK:
+        if not os.path.isdir(WORLD):
+            log("no world yet, nothing to back up")
+            return None
+        since = time.time() - 1
+        bds_command("save hold")
+        tmpdir = tempfile.mkdtemp(dir=STATE_DIR)
+        try:
+            files = None
+            for _ in range(30):
+                time.sleep(2)
+                bds_command("save query")
+                time.sleep(1)
+                txt = bds_logs(since=since, tail=200)
+                if "ready to be copied" in txt:
+                    rest = txt.split("ready to be copied", 1)[1].splitlines()[1:]
+                    line = next((l for l in rest if re.search(r":\d+", l)), "")
+                    files = {}
+                    for part in line.split(", "):
+                        if ":" in part:
+                            path, n = part.rsplit(":", 1)
+                            if n.strip().isdigit():
+                                files[path.strip()] = int(n)
+                    break
+            if not files:
+                raise RuntimeError("the server did not say the files were ready")
+            for rel, n in files.items():
+                rel = rel.split("/", 1)[1] if "/" in rel else rel   # drop the leading world folder name
+                src, dst = os.path.join(WORLD, rel), os.path.join(tmpdir, rel)
+                if not os.path.isfile(src):
+                    continue
+                os.makedirs(os.path.dirname(dst), exist_ok=True)
+                with open(src, "rb") as a, open(dst, "wb") as b:
+                    b.write(a.read(n))
+        finally:
+            bds_command("save resume")
+        try:
+            stamp = dt.datetime.now().strftime("%Y-%m-%d_%H%M")
+            name = f"{LEVEL.replace(' ', '_')}_{stamp}_{reason}.mcworld"
+            out = os.path.join(BACKUPS, name)
+            make_mcworld(tmpdir, out + ".part")
+            os.replace(out + ".part", out)
+            log(f"backup saved while playing: {name} ({os.path.getsize(out) // 1048576} MB)")
+            save_state(last_backup=name, last_backup_at=time.time(), backup_note="")
+        finally:
+            shutil.rmtree(tmpdir, ignore_errors=True)
+        prune_backups()
+        return out
+
+
 def make_mcworld(world_dir, out):
     """An .mcworld is a zip of the world folder's contents, so the iPad can open it too."""
     with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED, compresslevel=6) as z:
@@ -728,7 +781,7 @@ def status():
         "skins_installed": s.get("skins_version"),
         "pending": s.get("pending", ""), "held": s.get("held", ""),
         "last_update": s.get("last_update", ""),
-        "last_backup": s.get("last_backup", ""),
+        "last_backup": s.get("last_backup", "") + (f" ({s['backup_note']})" if s.get("backup_note") else ""),
         "imported": s.get("imported", ""),
         "backups": sorted((f for f in os.listdir(BACKUPS) if f.endswith(".mcworld")), reverse=True)[:20],
         "originals": sorted(os.listdir(os.path.join(BACKUPS, "originals"))) if os.path.isdir(os.path.join(BACKUPS, "originals")) else [],
@@ -846,14 +899,22 @@ class Admin(http.server.BaseHTTPRequestHandler):
             threading.Thread(target=check_updates, kwargs={"force": False}, daemon=True).start()
             return self.send(200, PAGE.format(body=f"<div class=card>Approved {html.escape(v)}. It goes on as soon as nobody is playing.</div>{back}"))
         if u.path == "/backup-now":
+            n = players_online()
             def job():
-                n = players_online()
-                if n:
-                    log(f"backup skipped, {n} playing")
-                else:
-                    backup("manual")
+                save_state(backup_note="backing up now")
+                try:
+                    if n:
+                        live_backup("manual")
+                    else:
+                        backup("manual")
+                    save_state(backup_note="")
+                except Exception as e:
+                    log(f"backup failed: {e}")
+                    save_state(backup_note=f"last Back up now failed: {e}")
             threading.Thread(target=job, daemon=True).start()
-            return self.send(200, PAGE.format(body=f"<div class=card>Backing up now. The server is off for about a minute.</div>{back}"))
+            msg = ("Backing up now while you play. Nobody gets kicked off." if n else
+                   "Backing up now. The server is off for about a minute.")
+            return self.send(200, PAGE.format(body=f"<div class=card>{msg} Reload this page in a minute or two and it will be at the top of the list.</div>{back}"))
         if u.path == "/allow":
             n = int(self.headers.get("Content-Length", "0"))
             form = urllib.parse.parse_qs(self.rfile.read(n).decode())
